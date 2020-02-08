@@ -17,11 +17,7 @@ def hello():
 
 @app.route("/analyse/sentiment", methods=['POST'])
 def analyse_sentiment():
-    sentence = request.get_json()['sentence']
-    storage_adapter={
-        "import_path": "chatterbot.storage.SQLStorageAdapter",
-        "database_uri": "sqlite:///test.sqlite3"
-    }
+    question = request.get_json()['question']
     bot= ChatBot('Bot')
     trainer = ChatterBotCorpusTrainer(bot)
 
@@ -40,12 +36,12 @@ def analyse_sentiment():
     #        reply = bot.get_response(message)
     #        print('ChatBot:', reply)
             
-    polarity = bot.get_response(sentence).serialize()['text']
+    answer = bot.get_response(question).serialize()['text']
     # print(polarity['text'])
     # print(type(polarity))
     # polarity = TextBlob(sentence).sentences[0].polarity
     return jsonify(
-        sentence=sentence,
-        polarity=polarity
+        question=question,
+        answer=answer
     )
-if __name__ == '__main__': app.run(host='0.0.0.0', port=5000)
+if __name__ == '__main__': app.run(host='0.0.0.0', port=5003)

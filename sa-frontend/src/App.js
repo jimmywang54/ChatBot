@@ -4,7 +4,7 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 import Paper from "material-ui/Paper";
-import Polarity from "./components/Polarity";
+import Message from "./components/Message";
 
 const style = { marginLeft: 12 };
 
@@ -12,34 +12,39 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sentence: "",
-      polarity: ""
+      question: "",
+      answer: ""
     };
   }
 
   analyzeSentence() {
-    fetch("http://localhost:8080/sentiment", {
+    // alert('In analyzeSentence Func');
+    fetch("https://localhost:5001/sentiment/message", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ sentence: this.textField.getValue() })
+      body: JSON.stringify({ 
+        question: this.textField.getValue(),
+        answer: ""
+       })
     })
       .then(response => response.json())
       .then(data => this.setState(data));
   }
 
   onEnterPress = e => {
+    // alert('Enter Press');
     if (e.key === "Enter") {
       this.analyzeSentence();
     }
   };
   render() {
     const polarityComponent =
-      this.state.polarity !== "" ? (
-        <Polarity
-          sentence={this.state.sentence}
-          polarity={this.state.polarity}
+      this.state.answer !== "" ? (
+        <Message
+          question={this.state.question}
+          answer={this.state.answer}
         />
       ) : null;
     return (
@@ -50,7 +55,7 @@ class App extends Component {
             <TextField
               ref={ref => (this.textField = ref)}
               onKeyUp={this.onEnterPress.bind(this)}
-              hintText="Type your sentence."
+              hintText="Type your question."
             />
             <RaisedButton
               label="Send"
