@@ -12,11 +12,13 @@ namespace sa_webapp.Services
 {
     public class MessageService
     {
+        private String flaskUrl = "http://localhost:5003/analyse/sentiment";
         private HttpClient client = new HttpClient();
-        private HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5003/analyse/sentiment");
+        private HttpRequestMessage requestMessage;
 
         public Message ask(Message msg)
         {
+            requestMessage = new HttpRequestMessage(HttpMethod.Post, flaskUrl);
             // Should get the answer from Flask
             String msgJson = JsonSerializer.Serialize(msg);
 
