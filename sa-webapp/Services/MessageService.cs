@@ -12,8 +12,8 @@ namespace sa_webapp.Services
 {
     public class MessageService
     {
-        private static HttpClient client = new HttpClient();
-        private static HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5003/analyse/sentiment");
+        private HttpClient client = new HttpClient();
+        private HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5003/analyse/sentiment");
 
         public Message ask(Message msg)
         {

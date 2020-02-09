@@ -8,5 +8,5 @@ npm 6.9.0
 .NET Core SDKs 3.1.101
 .NET Core runtimes 3.1.1
 
-Flask 0.12.2
-Python 3.7.1
+Flask 1.1.1
+Python 3.8.1
