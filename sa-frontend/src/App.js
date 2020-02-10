@@ -17,9 +17,8 @@ class App extends Component {
     };
   }
 
-  analyzeSentence() {
-    // alert('In analyzeSentence Func');
-    fetch("https://localhost:5001/sentiment/message", {
+  analyze() {
+    fetch("https://localhost:5001/chatbot/message", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -34,13 +33,12 @@ class App extends Component {
   }
 
   onEnterPress = e => {
-    // alert('Enter Press');
     if (e.key === "Enter") {
-      this.analyzeSentence();
+      this.analyze();
     }
   };
   render() {
-    const polarityComponent =
+    const messageComponent =
       this.state.answer !== "" ? (
         <Message
           question={this.state.question}
@@ -60,9 +58,9 @@ class App extends Component {
             <RaisedButton
               label="Send"
               style={style}
-              onClick={this.analyzeSentence.bind(this)}
+              onClick={this.analyze.bind(this)}
             />{" "}
-            {polarityComponent}
+            {messageComponent}
           </Paper>{" "}
         </div>
       </MuiThemeProvider>

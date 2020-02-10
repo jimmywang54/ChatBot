@@ -10,7 +10,7 @@ using sa_webapp.Services;
 namespace sa_webapp.Controllers
 {
     [Produces("application/json")]
-    [Route("sentiment/[controller]")]
+    [Route("chatbot/[controller]")]
     [ApiController]
     [EnableCors("ReactPolicy")]
     public class MessageController : Controller
@@ -23,16 +23,14 @@ namespace sa_webapp.Controllers
 
         public Message Get()
         {
-            Console.WriteLine("asdf");
+            Console.WriteLine("No defined http get method.");
             return new Message();
         }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Message msg)
         {
-            return CreatedAtAction("Get", new { id = msg.answer }, msgService.ask(msg));
-            // Console.WriteLine("In Post Method");
-            // return CreatedAtAction("Get", new Message());
+            return CreatedAtAction("Get", msg.question, msgService.ask(msg));
         }
         
     }
