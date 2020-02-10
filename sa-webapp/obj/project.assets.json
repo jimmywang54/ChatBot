@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/JimmyWang/Desktop/NEU/CSYE7220/Assignment/A4/ChatBox/sa-webapp/sa-webapp.csproj",
+      "projectUniqueName": "/Users/JimmyWang/Desktop/NEU/CSYE7220/Assignment/PinHoWang_A4/ChatBox/sa-webapp/sa-webapp.csproj",
       "projectName": "sa-webapp",
-      "projectPath": "/Users/JimmyWang/Desktop/NEU/CSYE7220/Assignment/A4/ChatBox/sa-webapp/sa-webapp.csproj",
+      "projectPath": "/Users/JimmyWang/Desktop/NEU/CSYE7220/Assignment/PinHoWang_A4/ChatBox/sa-webapp/sa-webapp.csproj",
       "packagesPath": "/Users/JimmyWang/.nuget/packages/",
-      "outputPath": "/Users/JimmyWang/Desktop/NEU/CSYE7220/Assignment/A4/ChatBox/sa-webapp/obj/",
+      "outputPath": "/Users/JimmyWang/Desktop/NEU/CSYE7220/Assignment/PinHoWang_A4/ChatBox/sa-webapp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/JimmyWang/.nuget/NuGet/NuGet.Config"

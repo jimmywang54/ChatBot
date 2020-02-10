@@ -12,7 +12,7 @@ namespace sa_webapp.Services
 {
     public class MessageService
     {
-        private String flaskUrl = "http://localhost:8080/analyse/chatbot";
+        private String flaskUrl = "http://localhost:8080/chatbot";
         private HttpClient client = new HttpClient();
         private HttpRequestMessage requestMessage;
 

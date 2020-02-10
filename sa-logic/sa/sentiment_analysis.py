@@ -15,7 +15,7 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
 
-@app.route("/analyse/chatbot", methods=['POST'])
+@app.route("/chatbot", methods=['POST'])
 def analyse_sentiment():
     question = request.get_json()['question']
     bot= ChatBot('Bot')

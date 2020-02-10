@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   analyze() {
-    fetch("https://localhost:5001/chatbot/message", {
+    fetch("https://localhost:5001/message", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -10,7 +10,7 @@ using sa_webapp.Services;
 namespace sa_webapp.Controllers
 {
     [Produces("application/json")]
-    [Route("chatbot/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     [EnableCors("ReactPolicy")]
     public class MessageController : Controller
