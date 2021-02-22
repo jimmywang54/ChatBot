@@ -1,4 +1,4 @@
-# ChatBox
+# ChatBot
 
 ## Front-end
 React
